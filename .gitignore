@@ -1,0 +1,6 @@
+*.so
+*.mod
+*.sw[op]
+*.pyc
+output*.txt
+output/
