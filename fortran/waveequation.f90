@@ -58,4 +58,22 @@ MODULE waveequation
     return
   END FUNCTION
 
+  SUBROUTINE fill(U, n, m)
+    !f2py REAL, DIMENSION(n,m,2), INTENT(in,out) :: U
+    !f2py INTEGER, INTENT(hide)                  :: n, m
+    REAL, DIMENSION(n,m,2) :: U
+    INTEGER              :: n,m, i,j
+    REAL :: x, y
+
+    do i=0,n
+      x = 2./n * i - 1
+      do j=0,m
+        y = 2./m * j - 1
+        U(i,j,1) = 0.
+        U(i,j,2) = exp(-(x*x + y*y) / (0.01))
+      end do
+    end do
+  end subroutine
+
+
 END MODULE
