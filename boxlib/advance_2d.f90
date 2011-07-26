@@ -20,7 +20,7 @@
 
         Unew =         U                +         dt * dU(U   , n, m, ng, dx)
         Unew = 0.75  * U + 0.25  * Unew + 0.25  * dt * dU(Unew, n, m, ng, dx)
-        U    = 1./3. * U + 2./3. * Unew + 2./3. * dt * dU(Unew, n, m, ng, dx)
+        Unew = 1./3. * U + 2./3. * Unew + 2./3. * dt * dU(Unew, n, m, ng, dx)
       end subroutine
 
 
